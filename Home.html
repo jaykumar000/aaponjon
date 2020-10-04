@@ -1,0 +1,195 @@
+<html>
+<head>
+	<meta charset="UTF-8 name="viewport" content="width=device-width, initial-scale=1">
+	<title>Apanjan</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	
+	
+</head>
+<body>
+<div class="header" id="myHeader">
+	<table border="1">
+  	<tr>
+  		<td width="10%">
+  			<img src="images/apanjanlogo1.jpeg" alt="Apanjan" height="100px" width="150px" >
+  		</td>
+  		<td width="20%">
+  			<img src="images/apanjanlogo2.jpeg" alt="Apanjan" height="100px" width="250px" >
+  		</td>
+  		<td width="70%">
+  			<div class="header-right">
+  			   <p id="countdowmtimer"></p>
+                <a class="active" href="Home.html">Home</a>
+                <a href="Gallery.html">Gallery</a>
+                <a href="#Home">About</a>
+                <a href="#Contact">Products</a>
+                <a href="#Services">Services</a>
+                <a href="#ContactUs">Contact Us</a>
+      		</div>
+      		
+      	</td>
+  	</tr>
+  	
+  </table>
+</div>
+<div class="container">
+    <div class="slideshow-container">
+		<div class="mySlides fade">
+ 			 <div class="numbertext"></div>
+ 				 <img src="images/sliderimg1.png" style="width:100%">
+ 				 <div class="text"></div>
+		</div>
+
+		<div class="mySlides fade">
+			  <div class="numbertext"></div>
+  			  <img src="images/sliderimg2.jpg" style="width:100%">
+ 			  <div class="text">Caption Two</div>
+		</div>
+
+		<div class="mySlides fade">
+ 			 <div class="numbertext"></div>
+ 			 <img src="images/sliderimg2.jpg" style="width:100%">
+ 			 <div class="text">Caption Three</div>
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+	<br>
+
+	<div style="text-align:center">
+	  <span class="dot" onclick="currentSlide(1)"></span> 
+  	  <span class="dot" onclick="currentSlide(2)"></span> 
+ 	  <span class="dot" onclick="currentSlide(3)"></span> 
+	</div>
+   </div>  
+   
+   <div class="marquee-container">
+    <marquee direction="left" scrollamount="10">The most awaited event of the year is coming soon.Enjoy this auspicious festival with your loved one.Stay safe, Stay at home.
+    </marquee>
+   </div>
+  
+    <div class="tab-container"> 
+    	<h2>Puja Schedule</h2>
+		<div class="tab">
+  			<button class="tablinks" onclick="openTab(event, 'Sashti')" id="defaultOpen">Maha Sashti</button>
+ 			<button class="tablinks" onclick="openTab(event, 'Saptami')">Maha Saptami</button>
+    		<button class="tablinks" onclick="openTab(event, 'Ashtami')">Maha Ashtami</button>
+    		<button class="tablinks" onclick="openTab(event, 'Navami')">Maha Navami</button>
+   			<button class="tablinks" onclick="openTab(event, 'Dashami')">Bijaya Dashami</button>
+		</div>
+		<div id="Sashti" class="tabcontent">
+  			<h3>Sashti</h3>
+  			<p>Devotees welcomes the goddess and festive celebrations are inaugurated</p>
+		</div>
+
+		<div id="Saptami" class="tabcontent">
+  			<h3>Saptami</h3>
+ 			<p>The Maha Puja (Great Ceremony) starts on Maha Saptami.</p> 
+		</div>
+
+		<div id="Ashtami" class="tabcontent">
+  			<h3>Ashtami</h3>
+  			<p>This is the eighth day of Durga Puja celebrations, when the weapons used by Durga are worshipped.</p>
+		</div>
+		<div id="Navami" class="tabcontent">
+  			<h3>Navami</h3>
+ 		 	<p>This is the ninth day of Durga Puja. On this day, the victory of Durga over the evil buffalo demon Mahishasura is celebrated. </p>
+		</div>
+		<div id="Dashami" class="tabcontent">
+ 			 <h3>Dashami</h3>
+ 		 	<p>Also known as Dashain or Tenth day of Navratri or Durgotsav, Vijaya Dashami commemorates the day that Durga appeared riding a lion to slay the Mahisasura.</p>
+		</div>
+    </div>
+ 
+  
+    
+<script type="text/javascript">
+
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+function openTab(evt, pujaDay) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(pujaDay).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+
+// Set the date we're counting down to
+var countDownDate = new Date("Oct 22, 2020 12:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("countdowmtimer").innerHTML = 'Hurry Up!!!'+days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s "+"to Go..";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdowmtimer").innerHTML = "ENJOY!!!";
+  }
+}, 1000);
+</script>
+</body>
+</html>
+
