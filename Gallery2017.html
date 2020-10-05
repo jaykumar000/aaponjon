@@ -1,0 +1,90 @@
+<html>
+<head>
+<meta charset="UTF-8 name="viewport" content="width=device-width, initial-scale=1">
+	<title>Apanjan Image Gallery 2017</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/styleimageGallery.css" type="text/css" media="all">
+</head>
+<body>
+
+<div class="header" id="myHeader">
+	<table border="0">
+  	<tr>
+  		<td width="10%">
+  			<img src="images/apanjanlogo1.jpeg" alt="Apanjan" height="100px" width="150px" >
+  		</td>
+  		<td width="60%" colspan="2">
+  			<img src="images/apanjanlogo2.jpeg" alt="Apanjan" height="100px" width="250px" >
+  		</td>
+  		<td width="30%" valign="bottom">
+  		    <p align="right" id="countdowmtimer" class="counttimer"></p>
+  			<div class="navbar">
+                <a href="Home.html">Home</a>
+                <a href="Gallery.html">Gallery</a>
+                <a href="About.html">About</a>
+                <a href="#ContactUs">Contact Us</a>
+      		</div>
+      	</td>
+  	</tr>
+  </table>
+</div>
+<hr class="hrstyle"/>
+<h2 style="text-align:center">Image Gallery</h2>
+<div class="header-modal-content">
+   <div class="row">
+    <a href="#">
+		<img id="Img1" src="images/2017PujoGallery/PHOTO-2018-1.jpg" onclick="openWindow(event,'Img1')"  style="width:80%;max-width:200px;padding-top:20px;"></img>
+	</a>
+	<a href="#">
+		<img id="Img2" src="images/2017PujoGallery/PHOTO-2018-2.jpg" onclick="openWindow(event,'Img2')"  style="width:80%;max-width:200px;padding-top:20px;"></img>
+	</a>
+	<a href="#">
+		<img id="Img3" src="images/2017PujoGallery/PHOTO-2018-3.jpg" onclick="openWindow(event,'Img3')"  style="width:80%;max-width:200px;padding-top:20px;"></img>
+	</a>
+	<a href="#">
+		<img id="Img4" src="images/2017PujoGallery/PHOTO-2018-1.jpg" onclick="openWindow(event,'Img4')"  style="width:80%;max-width:200px;padding-top:20px;"></img>
+    </a>
+    <a href="#">
+		<img id="Img5" src="images/2017PujoGallery/PHOTO-2018-1.jpg" onclick="openWindow(event,'Img5')"  style="width:80%;max-width:200px;padding-top:20px;"></img>
+    </a>
+    <div>
+    
+<!-- The Modal -->
+<div id="ModalWindow" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="images">
+  <div id="caption"></div>
+</div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("ModalWindow");
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var modalImg = document.getElementById("images");
+var captionText = document.getElementById("caption");
+
+function openWindow(evt,imageId){
+	var imgId = document.getElementById(imageId);
+	openImageModalWindow(imgId);
+}
+
+function openImageModalWindow(img){
+	img.onclick = function(){
+  		modal.style.display = "block";
+  		modalImg.src = this.src;
+ 	    captionText.innerHTML = this.alt;
+	}
+}
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+
+</body>
+</html>
